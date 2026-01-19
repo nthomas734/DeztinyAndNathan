@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deztiny & Nathan | Chicago Wedding Weekend</title>
+    
+    <meta property="og:title" content="Deztiny & Nathan | Chicago Wedding Weekend">
+    <meta property="og:description" content="Join us in Chicago! June 13, 2026. Logistics, hotels, and our favorite spots.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Branding */
+            --primary: #1a365d;       
+            --accent: #c5a059;        
+            --bg-body: #f8f9fa;       
+            --bg-card: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #5e6c7c;
+            --border: #e2e8f0;
+            
+            /* Spacing & UI */
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        /* --- Global --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Icons --- */
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            stroke-width: 2;
+            fill: none;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700; 
+            color: var(--primary); 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px; 
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+            border: none;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary);
+            stroke-width: 2;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-md);
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        /* --- Typography --- */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 80px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 16px; 
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        h4 {
+             font-size: 0.95rem;
+             text-transform: uppercase;
+             color: var(--text-muted);
+             margin-bottom: 15px;
+             letter-spacing: 0.05em;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(26, 54, 93, 0.2);
+            transition: all 0.2s ease;
+        }
+        a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+        /* --- Layout --- */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .grid-2 { display: grid; gap: 40px; }
+        @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+        /* --- Hero --- */
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 120px 20px 100px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            margin-bottom: -60px;
+        }
+        .hero .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* --- Countdown Timer (Styled) --- */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 80px; 
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .timer-box {
+            background: white;
+            padding: 15px;
+            min-width: 85px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .timer-box:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .timer-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+        .timer-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* --- Cards --- */
+        .section-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        /* --- TIMELINE --- */
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .timeline-time {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0 0 5px 0;
+        }
+        .timeline-desc {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* --- FAQ Accordion --- */
+        details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 30px;
+            color: var(--primary);
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        details[open] summary::after { content: "-"; }
+        .faq-answer {
+            margin-top: 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Components --- */
+        ul { list-style: none; padding: 0; }
+        /* Added top margin to lists inside accommodations for breathing room */
+        #stay ul { margin-top: 25px; }
+        
+        li { margin-bottom: 15px; position: relative; padding-left: 24px; }
+        li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 6px;
+            font-weight: bold;
+        }
+        .price-badge {
+            background-color: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 6px;
+            vertical-align: middle;
+            white-space: nowrap; 
+        }
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: #fffbeb; 
+            border: 1px solid #fcd34d;
+            padding: 15px;
+            border-radius: var(--radius-lg);
+            margin-top: 20px;
+        }
+        
+        /* --- Back to Top --- */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        footer { text-align: center; padding: 60px 20px; color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">D&N</div>
+            
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <svg class="menu-icon" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#wedding" onclick="toggleMenu()">Wedding</a>
+                <a href="#stay" onclick="toggleMenu()">Stay</a>
+                <a href="#do" onclick="toggleMenu()">Do</a>
+                <a href="#eat" onclick="toggleMenu()">Eat</a>
+                <a href="#faq" onclick="toggleMenu()">Q&A</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Deztiny & Nathan</h1>
+            <div class="subtitle">June 13, 2026 • Chicago, Illinois</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="countdown">
+            <div class="timer-box"><span class="timer-number" id="days">00</span><span class="timer-label">Days</span></div>
+            <div class="timer-box"><span class="timer-number" id="hours">00</span><span class="timer-label">Hours</span></div>
+            <div class="timer-box"><span class="timer-number" id="minutes">00</span><span class="timer-label">Mins</span></div>
+            <div class="timer-box"><span class="timer-number" id="seconds">00</span><span class="timer-label">Secs</span></div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <section id="wedding" class="section-card" style="margin-top: 0; position: relative; z-index: 10;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.2rem; color: var(--text-main); font-weight: 500;">
+                    Welcome to Chicago! We are so excited to celebrate with you.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-time">4:30 PM</span>
+                    <h4 class="timeline-title">The Ceremony</h4>
+                    <p class="timeline-desc">
+                        <strong>Alfred Caldwell Lily Pool</strong><br>
+                        Lincoln Park<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Alfred+Caldwell+Lily+Pool+Chicago" target="_blank" style="font-size: 0.9rem; font-weight: 600;">View Map →</a>
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker" style="background: var(--bg-body); border-color: var(--border);"></div>
+                    <span class="timeline-time">Travel</span>
+                    <p class="timeline-desc" style="font-size: 0.9rem; font-style: italic;">
+                        Approx. 30 min travel time to West Loop.<br>
+                        We recommend Uber or Lyft.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <span class="timeline-time">6:30 PM</span>
+                    <h4 class="timeline-title">Reception Dinner</h4>
+                    <p class="timeline-desc">
+                        <strong>Avec</strong><br>
+                        West Loop<br>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Avec+West+Loop+Chicago" target="_blank" style="font-size: 0.9rem; font-weight: 600;">View Map →</a>
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Deztiny+%26+Nathan%27s+Wedding&dates=20260613T163000/20260613T230000&details=Ceremony+at+Alfred+Caldwell+Lily+Pool+at+4%3A30+PM.+Dinner+at+Avec+West+Loop+at+6%3A30+PM.&location=Alfred+Caldwell+Lily+Pool%2C+Chicago%2C+IL" target="_blank" style="background-color: var(--accent); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block;">Add to Calendar</a>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+                Travel & Logistics
+            </h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Getting Here</h3>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Ohare+Airport" target="_blank">O'Hare (ORD)</a>:</strong> This is our recommended airport. It is larger and generally has more flight options.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Midway+Airport" target="_blank">Midway (MDW)</a>:</strong> A great alternative (and often less chaotic), primarily served by Southwest Airlines.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>From Airport to Downtown</h3>
+                    <p style="margin-bottom: 10px;">The easiest and most affordable way to get into the city is via the "L" train.</p>
+                    <ul>
+                        <li><strong>From O'Hare:</strong> Take the <strong>Blue Line</strong> straight into the city (approx. 45-60 mins).</li>
+                        <li><strong>From Midway:</strong> Take the <strong>Orange Line</strong> straight into the city (approx. 25-30 mins).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="note"><strong>Note:</strong> Rideshares (Uber/Lyft) and Taxis are available, but they can be expensive and slow, depending on traffic.</div>
+        </section>
+
+        <section id="stay" class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Where to Stay
+            </h2>
+            <div class="grid-2">
+                <div>
+                    <h3>River North / Gold Coast</h3>
+                    <p style="font-size:0.9rem; color: var(--text-muted);">The most convenient central hub. You are halfway between the ceremony (North) and dinner (West), and walking distance to the Riverwalk, shopping, and major museums.</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=The+Godfrey+Hotel+Chicago" target="_blank">The Godfrey Hotel</a> <span class="price-badge">$291</span></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=ACME+Hotel+Chicago" target="_blank">ACME Hotel Chicago</a> <span class="price-badge">$221</span></li>
+                        <li><strong>Luxury Option:</strong> <a href="https://www.google.com/maps/search/?api=1&query=The+Langham+Chicago" target="_blank">The Langham</a> <span class="price-badge">$612</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>The Loop</h3>
+                    <p style="font-size:0.9rem; color: var(--text-muted);">Best if you prioritize being close to the main tourist attractions, such as Millennium Park (The Bean), Navy Pier, the Riverwalk, museums, and boat tours.</p>
+                    <ul>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Le+Meridien+Essex+Chicago" target="_blank">Le Méridien Essex</a> <span class="price-badge">$318</span></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Hyatt+Centric+The+Loop" target="_blank">Hyatt Centric The Loop</a> <span class="price-badge">$308</span></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Hyatt+Place+Chicago+Downtown+The+Loop" target="_blank">Hyatt Place Chicago</a> <span class="price-badge">$293</span></li>
+                        <li><strong>Luxury Option:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Pendry+Chicago" target="_blank">Pendry Chicago</a> <span class="price-badge">$433</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="do" class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                Things to Do
+            </h2>
+
+            <div style="background: var(--primary); color: white; padding: 30px; border-radius: var(--radius-lg); margin-bottom: 30px;">
+                <h3 style="color: white; border: none; margin-top: 0;">🏆 #1 Recommendation: Architecture Tour</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">If you only do one tourist activity, make it this one. It is the best way to see the city.</p>
+                <a href="https://www.tripadvisor.com/AttractionProductReview-g35805-d11452109-Chicago_Architecture_River_Cruise-Chicago_Illinois.html" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border-radius: 4px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4);">Book our recommended tour →</a>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h3>The Museum Campus & Arts</h3>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=The+Art+Institute+of+Chicago" target="_blank">The Art Institute of Chicago</a>:</strong> World-famous collection (don't miss the Impressionist wing).</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=The+Field+Museum" target="_blank">The Field Museum</a>:</strong> Natural history and dinosaurs (home to Sue the T-Rex).</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Shedd+Aquarium" target="_blank">Shedd Aquarium</a>:</strong> Right on the lakefront; great views and exhibits.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Adler+Planetarium" target="_blank">Adler Planetarium</a>:</strong> For space enthusiasts and the best skyline view in the city.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Museum+of+Science+and+Industry" target="_blank">Museum of Science and Industry (MSI)</a>:</strong> A bit further south, but incredible hands-on exhibits (U-505 Submarine, Coal Mine).</li>
+                        <li><strong>Specialty Museums:</strong> Chicago is home to numerous specialty museums covering everything from contemporary art to local history.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Explore Lincoln Park</h3>
+                    <p style="font-size:0.9rem; margin-bottom: 15px;">Since the ceremony is in the park, this is a great area to explore beforehand.</p>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Lincoln+Park+Conservatory" target="_blank">Lincoln Park Conservatory</a>:</strong> A beautiful glass house with exotic plants—and a special place for us, as it is where we got engaged!</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Lincoln+Park+Zoo" target="_blank">Lincoln Park Zoo</a>:</strong> One of the few free zoos left in the country.</li>
+                    </ul>
+                    <h3>Get Active</h3>
+                    <ul>
+                        <li><strong>Riverwalk & Lakefront Trail:</strong> Chicago has an incredible path right along Lake Michigan and the river. It’s perfect for a walk or a run.</li>
+                        <li><strong>Rent a Bike:</strong> You can easily grab a "Divvy" bike (our bike-share system) and cruise along the water.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                Chicago Classics
+            </h2>
+            <div class="grid-2">
+                <div>
+                    <ul>
+                        <li><strong>Chicago Style Pizza:</strong> The classics are <a href="https://www.google.com/maps/search/?api=1&query=Lou+Malnatis" target="_blank">Lou Malnati's</a>, <a href="https://www.google.com/maps/search/?api=1&query=Giordanos" target="_blank">Giordano's</a>, and <a href="https://www.google.com/maps/search/?api=1&query=Ginos+East" target="_blank">Gino's East</a>. <br><span style="font-size:0.9rem; color: var(--text-muted);"><em>Note: Chicago style is overrated, though, unless you really like cheese.</em></span></li>
+                        <li><strong>Our Alternative:</strong> Try tavern-style pizza (<a href="https://www.google.com/maps/search/?api=1&query=Piece+Pizzeria" target="_blank">Piece Pizzeria</a> is a good option), Detroit-style at <a href="https://www.google.com/maps/search/?api=1&query=Pequods+Pizza" target="_blank">Pequod's Pizza</a>, or just go for classic Neapolitan at <a href="https://www.google.com/maps/search/?api=1&query=Roberts+Pizza" target="_blank">Robert's</a>.</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><strong>Chicago Hot Dog:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Devil+Dawgs" target="_blank">Devil Dawgs</a>, <a href="https://www.google.com/maps/search/?api=1&query=Redhot+Ranch" target="_blank">Redhot Ranch</a>, and <a href="https://www.google.com/maps/search/?api=1&query=Wieners+Circle" target="_blank">The Wieners Circle</a> are good options with multiple locations.</li>
+                        <li><strong>Italian Beef:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Johnnies+Beef" target="_blank">Johnnie's Beef</a> is the best, but far. <a href="https://www.google.com/maps/search/?api=1&query=Als+Beef" target="_blank">Al's</a> is an easy option for something closer.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="eat" class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Eat & Drink Guide
+            </h2>
+
+            <h3>River North / Gold Coast</h3>
+            <div class="grid-2">
+                <div>
+                    <h4>Food</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Gilt+Bar+Chicago" target="_blank">Gilt Bar</a>:</strong> Moody atmosphere, great cocktails and pasta.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Tzuco+Chicago" target="_blank">Tzuco</a>:</strong> Incredible upscale Mexican cuisine.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Roberts+Pizza+and+Dough+Company" target="_blank">Robert's Pizza and Dough Company</a>:</strong> Great riverside spot for thin-crust pizza.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Sushi+san+Chicago" target="_blank">Sushi-san</a>:</strong> Fun, loud, hip sushi spot (great hip-hop playlist).</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Lil+Ba+Ba+Reeba" target="_blank">Lil’ Ba-Ba-Reeba</a>:</strong> Tapas style, good for groups.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=3rd+Coast+Cafe" target="_blank">3rd Coast Cafe</a>:</strong> A cozy neighborhood spot, great for breakfast/brunch.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Devil+Dawgs" target="_blank">Devil Dawgs</a>:</strong> The spot for a Chicago-style hot dog or late-night food.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Drinks</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Three+Dots+and+a+Dash" target="_blank">Three Dots and a Dash</a>:</strong> World-famous tiki bar in an alleyway basement. Book a reservation in advance.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Sparrow+Chicago" target="_blank">Sparrow</a>:</strong> An intimate, 1920s-style lobby bar tucked away in the Gold Coast.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Clark+Street+Ale+House" target="_blank">Clark Street Ale House</a>:</strong> A classic beer garden and ale house.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Wicker Park & Logan Square</h3>
+            <div class="grid-2">
+                <div>
+                    <h4>Food & Bars</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/contrib/115470153795619413758/reviews" target="_blank">Small Bar</a>:</strong> Old-school neighborhood bar with a tiny menu focused on their famous burger.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Bungalow+by+Middle+Brow" target="_blank">Bungalow by Middle Brow</a>:</strong> Incredible pizza and bread in a relaxed setting.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Gretel+Chicago" target="_blank">Gretel</a>:</strong> Great burger and whiskey list.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Mott+St+Chicago" target="_blank">Mott St</a>:</strong> Asian-fusion sharing plates (the burger here is also legendary).</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Piece+Brewery+and+Pizzeria" target="_blank">Piece Brewery and Pizzeria</a>:</strong> New Haven-style pizza and house-brewed beers.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Map+Room+Chicago" target="_blank">Map Room</a>:</strong> A traveler-themed beer bar.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Easy+Does+It+Chicago" target="_blank">Easy Does It</a>:</strong> Chill wine bar/patio (great for waiting for Akahoshi).</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Billy+Sunday+Chicago" target="_blank">Billy Sunday</a>:</strong> High-end cocktails and vintage amaro bar.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Ramen (Our Favorites)</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Oiistar+Chicago" target="_blank">Oiistar</a>:</strong> Our go-to spot.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Akahoshi+Ramen" target="_blank">Akahoshi Ramen</a>:</strong> Tip: This is extremely popular. Reservations drop on Mondays for the following week and go instantly. If you can't get a reservation, just walk in, put your name down, and grab a drink at Easy Does It while you wait.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Ramen+Wasabi" target="_blank">Ramen Wasabi</a>:</strong> Another excellent option for authentic bowls.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <h3 style="border-bottom: 2px solid var(--border); padding-bottom: 5px;">West Loop</h3>
+                    <h4>Food & Drink</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Monteverde+Chicago" target="_blank">Monteverde</a>:</strong> One of the best Italian spots in the city. Reservations open 30 days in advance and vanish quickly.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Aba+Chicago" target="_blank">Aba</a>:</strong> Mediterranean with a massive, beautiful rooftop patio.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Trivoli+Tavern" target="_blank">Trivoli Tavern</a>:</strong> Hidden down an alley; cozy, old-school supper club vibes.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=The+Press+Room+Chicago" target="_blank">The Press Room</a>:</strong> Intimate wine bar located in a basement.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Lazy+Bird+Chicago" target="_blank">Lazy Bird</a>:</strong> A dimly lit cocktail lounge with live music often.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="border-bottom: 2px solid var(--border); padding-bottom: 5px;">Ukrainian Village</h3>
+                    <h4>Food & Drink</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Lao+Peng+You" target="_blank">Lao Peng You</a>:</strong> Hand-rolled dumplings and noodles.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Kasama+Chicago" target="_blank">Kasama</a>:</strong> A Michelin-starred bakery and restaurant. Tip: The line for pastries/breakfast starts forming before they open. Go early or order online for pickup if possible.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Uncle+Mikes+Place" target="_blank">Uncle Mike’s Place</a>:</strong> Classic Filipino breakfast.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid-2" style="margin-top: 30px;">
+                <div>
+                    <h3 style="border-bottom: 2px solid var(--border); padding-bottom: 5px;">Chinatown</h3>
+                    <h4>Food & Drink</h4>
+                    <ul>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=QXY+Dumplings" target="_blank">QXY Dumplings</a>:</strong> The best soup dumplings (xiaolongbao) in the city.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Happy+Lamb+Hot+Pot" target="_blank">Happy Lamb Hot Pot</a>:</strong> Interactive and delicious hot pot.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Triple+Crown+Restaurant" target="_blank">Triple Crown</a>:</strong> A classic for Dim Sum.</li>
+                        <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Nine+Bar+Chicago" target="_blank">Nine Bar</a>:</strong> A cool, hidden speakeasy-style bar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section-card">
+            <h2>
+                <svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Common Questions
+            </h2>
+            <details>
+                <summary>What is the dress code?</summary>
+                <div class="faq-answer">Cocktail attire is requested. Please note that the ceremony takes place in a park with stone paths, so consider comfortable footwear.</div>
+            </details>
+            <details>
+                <summary>How do I get between the ceremony and reception?</summary>
+                <div class="faq-answer">We recommend taking an Uber or Lyft. The drive is approximately 20-30 minutes depending on traffic.</div>
+            </details>
+            <details>
+                <summary>Can I bring my kids?</summary>
+                <div class="faq-answer">We love your little ones, but our wedding will be an adults-only event. Thank you for understanding!</div>
+            </details>
+        </section>
+
+    </div>
+
+    <button onclick="topFunction()" id="backToTop" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <footer>
+        <p>Can't wait to see you there! — Deztiny & Nathan</p>
+    </footer>
+
+    <script>
+        // Countdown Timer Logic
+        const weddingDate = new Date("June 13, 2026 16:30:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Today is the day!";
+            }
+        }, 1000);
+
+        // Mobile Menu Logic
+        function toggleMenu() {
+            var x = document.getElementById("navLinks");
+            if (x.classList.contains("active")) {
+                x.classList.remove("active");
+            } else {
+                x.classList.add("active");
+            }
+        }
+
+        // Back to Top Button Logic
+        let mybutton = document.getElementById("backToTop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+</html>
