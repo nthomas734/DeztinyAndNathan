@@ -70,7 +70,7 @@
             margin: 0 auto;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between; 
+            justify-content: space-between; /* Ensures logo left, links right */
             align-items: center;
         }
 
@@ -99,7 +99,6 @@
         }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Mobile Menu Button */
         .menu-toggle {
             display: none;
             background: none;
@@ -115,9 +114,7 @@
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
+            .menu-toggle { display: block; }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -131,9 +128,7 @@
                 box-shadow: var(--shadow-md);
                 text-align: center;
             }
-            .nav-links.active {
-                display: flex;
-            }
+            .nav-links.active { display: flex; }
         }
 
         /* --- Typography --- */
@@ -206,7 +201,7 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-        /* --- Countdown Timer (Styled) --- */
+        /* --- Countdown Timer --- */
         #countdown {
             display: flex;
             justify-content: center;
@@ -225,10 +220,7 @@
             border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.2s ease;
         }
-        .timer-box:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
+        .timer-box:hover { transform: translateY(-3px); border-color: var(--accent); }
         .timer-number {
             font-size: 1.8rem;
             font-weight: 700;
@@ -245,6 +237,31 @@
             color: var(--text-muted);
             font-weight: 600;
         }
+
+        /* --- Our Story & Gallery --- */
+        .story-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        @media (min-width: 768px) { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .photo-item {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover { transform: scale(1.02); }
 
         /* --- Cards --- */
         .section-card {
@@ -272,120 +289,58 @@
             width: 2px;
             background: #e2e8f0;
         }
-        .timeline-item {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 40px;
-        }
+        .timeline-item { position: relative; padding-left: 60px; margin-bottom: 40px; }
         .timeline-marker {
-            position: absolute;
-            left: 11px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 4px solid var(--accent);
-            border-radius: 50%;
-            z-index: 2;
+            position: absolute; left: 11px; top: 5px; width: 20px; height: 20px;
+            background: white; border: 4px solid var(--accent); border-radius: 50%; z-index: 2;
         }
         .timeline-time {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 4px;
-            display: block;
+            font-size: 0.85rem; font-weight: 700; color: var(--accent);
+            text-transform: uppercase; margin-bottom: 4px; display: block;
         }
         .timeline-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin: 0 0 5px 0;
+            font-family: 'Playfair Display', serif; font-size: 1.5rem;
+            color: var(--primary); margin: 0 0 5px 0;
         }
-        .timeline-desc {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
+        .timeline-desc { font-size: 1rem; color: var(--text-muted); margin: 0; }
 
         /* --- FAQ Accordion --- */
-        details {
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
-        }
+        details { margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
         summary {
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none;
-            position: relative;
-            padding-right: 30px;
-            color: var(--primary);
+            font-weight: 600; cursor: pointer; list-style: none; position: relative;
+            padding-right: 30px; color: var(--primary);
         }
         summary::-webkit-details-marker { display: none; }
         summary::after {
-            content: "+";
-            position: absolute;
-            right: 0;
-            font-weight: 400;
-            font-size: 1.2rem;
-            color: var(--accent);
+            content: "+"; position: absolute; right: 0; font-weight: 400;
+            font-size: 1.2rem; color: var(--accent);
         }
         details[open] summary::after { content: "-"; }
-        .faq-answer {
-            margin-top: 10px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+        .faq-answer { margin-top: 10px; color: var(--text-muted); font-size: 0.95rem; }
 
         /* --- Components --- */
         ul { list-style: none; padding: 0; }
-        /* Added top margin to lists inside accommodations for breathing room */
-        #stay ul { margin-top: 25px; }
+        #stay ul { margin-top: 25px; } /* Breathing room for hotels */
         
         li { margin-bottom: 15px; position: relative; padding-left: 24px; }
         li::before {
-            content: "•";
-            color: var(--accent);
-            position: absolute;
-            left: 6px;
-            font-weight: bold;
+            content: "•"; color: var(--accent); position: absolute; left: 6px; font-weight: bold;
         }
         .price-badge {
-            background-color: #f0fdf4;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 6px;
-            margin-left: 6px;
-            vertical-align: middle;
-            white-space: nowrap; 
+            background-color: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0;
+            font-size: 0.75rem; font-weight: 700; padding: 2px 8px;
+            border-radius: 6px; margin-left: 6px; vertical-align: middle; white-space: nowrap; 
         }
         .note {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            background: #fffbeb; 
-            border: 1px solid #fcd34d;
-            padding: 15px;
-            border-radius: var(--radius-lg);
-            margin-top: 20px;
+            font-size: 0.9rem; color: var(--text-muted); background: #fffbeb; 
+            border: 1px solid #fcd34d; padding: 15px; border-radius: var(--radius-lg); margin-top: 20px;
         }
         
         /* --- Back to Top --- */
         #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 99;
-            border: none;
-            background-color: var(--primary);
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            border-radius: 50%;
+            display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99;
+            border: none; background-color: var(--primary); color: white;
+            cursor: pointer; padding: 15px; border-radius: 50%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
@@ -405,6 +360,7 @@
             </button>
 
             <div class="nav-links" id="navLinks">
+                <a href="#story" onclick="toggleMenu()">Story</a>
                 <a href="#wedding" onclick="toggleMenu()">Wedding</a>
                 <a href="#stay" onclick="toggleMenu()">Stay</a>
                 <a href="#do" onclick="toggleMenu()">Do</a>
@@ -429,6 +385,28 @@
             <div class="timer-box"><span class="timer-number" id="seconds">00</span><span class="timer-label">Secs</span></div>
         </div>
     </div>
+
+    <section id="story" class="container" style="margin-bottom: 50px;">
+        <div class="section-card" style="text-align: center;">
+            <h2 style="justify-content: center; border: none; margin-bottom: 20px;">Our Story</h2>
+            
+            <div class="story-text">
+                <p>It started in Phoenix back in 2021. We were both just visiting the city at the time, but Nathan decided to make the move—and eventually convinced Deztiny to stick around with him instead of moving back to LA.</p>
+                <p>Our first date was technically for coffee, but the real highlight was a card game that turned into a "serious match." We realized pretty quickly just how competitive we both are.</p>
+                <p>We made things official on a camping trip deep inside the Grand Canyon, and a few years later, we shipped our lives (and our dog, Bean!) across the country to Chicago.</p>
+                <p>When it came time to propose, Nathan chose the Lincoln Park Conservatory. It’s a perfect bit of nature inside the city—and since it's right next to the wedding venue, you should all definitely check it out this weekend!</p>
+            </div>
+
+            <div class="photo-grid">
+                <img src="DSC04420 2.png" alt="Nathan and Deztiny in Japan" class="photo-item">
+                <img src="DSC04424 2.png" alt="Engagement Ring" class="photo-item">
+                <img src="IMG_8780.JPG" alt="Selfie with Rainbow" class="photo-item">
+                <img src="IMG_0764.JPG" alt="Grand Canyon" class="photo-item">
+                <img src="DSC02530.png" alt="Cactus Garden" class="photo-item">
+                <img src="IMG_1144.JPG" alt="Pumpkin Patch" class="photo-item">
+            </div>
+        </div>
+    </section>
 
     <div class="container">
         
@@ -539,7 +517,7 @@
             <div style="background: var(--primary); color: white; padding: 30px; border-radius: var(--radius-lg); margin-bottom: 30px;">
                 <h3 style="color: white; border: none; margin-top: 0;">🏆 #1 Recommendation: Architecture Tour</h3>
                 <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">If you only do one tourist activity, make it this one. It is the best way to see the city.</p>
-                <a href="https://www.tripadvisor.com/AttractionProductReview-g35805-d11452109-Chicago_Architecture_River_Cruise-Chicago_Illinois.html" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border-radius: 4px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4);">Our recommended tour →</a>
+                <a href="https://www.tripadvisor.com/AttractionProductReview-g35805-d11452109-Chicago_Architecture_River_Cruise-Chicago_Illinois.html" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; border-radius: 4px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4);">Book our recommended tour →</a>
             </div>
 
             <div class="grid-2">
