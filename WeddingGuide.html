@@ -70,7 +70,7 @@
             margin: 0 auto;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between; /* Ensures logo left, links right */
+            justify-content: space-between; /* Keeps logo left, links right */
             align-items: center;
         }
 
@@ -246,6 +246,13 @@
             font-size: 1.05rem;
             color: var(--text-main);
         }
+        
+        /* Forces paragraph separation */
+        .story-text p {
+            margin-bottom: 25px; 
+            line-height: 1.7;
+        }
+
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -260,6 +267,7 @@
             object-fit: cover;
             border-radius: var(--radius-lg);
             transition: transform 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
         .photo-item:hover { transform: scale(1.02); }
 
@@ -320,7 +328,7 @@
 
         /* --- Components --- */
         ul { list-style: none; padding: 0; }
-        #stay ul { margin-top: 25px; } /* Breathing room for hotels */
+        #stay ul { margin-top: 25px; } 
         
         li { margin-bottom: 15px; position: relative; padding-left: 24px; }
         li::before {
@@ -398,12 +406,12 @@
             </div>
 
             <div class="photo-grid">
-                <img src="DSC04420 2.png" alt="Nathan and Deztiny in Japan" class="photo-item">
-                <img src="DSC04424 2.png" alt="Engagement Ring" class="photo-item">
-                <img src="IMG_8780.JPG" alt="Selfie with Rainbow" class="photo-item">
-                <img src="IMG_0764.JPG" alt="Grand Canyon" class="photo-item">
-                <img src="DSC02530.png" alt="Cactus Garden" class="photo-item">
-                <img src="IMG_1144.JPG" alt="Pumpkin Patch" class="photo-item">
+                <img src="japan.jpg" alt="Nathan and Deztiny in Japan" class="photo-item">
+                <img src="ring.jpg" alt="Engagement Ring" class="photo-item">
+                <img src="rainbow.jpg" alt="Selfie with Rainbow" class="photo-item">
+                <img src="canyon.jpg" alt="Grand Canyon" class="photo-item">
+                <img src="cactus.jpg" alt="Cactus Garden" class="photo-item">
+                <img src="pumpkin.jpg" alt="Pumpkin Patch" class="photo-item">
             </div>
         </div>
     </section>
